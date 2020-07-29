@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.kaps.valetadmin.ui.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_valetListFragment"
+            app:destination="@id/valetListFragment"
+            app:popUpTo="@+id/registerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/valetListFragment"
+        android:name="com.kaps.valetadmin.ui.ValetListFragment"
+        android:label="fragment_valet_list"
+        tools:layout="@layout/fragment_valet_list" >
+        <action
+            android:id="@+id/action_valetListFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.kaps.valetadmin.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_valetListFragment"
+            app:destination="@id/valetListFragment"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
